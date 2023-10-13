@@ -1,0 +1,19 @@
+{
+  "name": "Tez",
+  "description": "Adjust video playback speed",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "tez.html",
+    "default_icon": "tez.png"
+  },
+  "permissions": ["tabs", "storage"],
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": [
+        "https://*/*"
+      ]
+    }
+  ]
+}
