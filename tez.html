@@ -4,23 +4,94 @@
       body {
         width: 200px;
         margin: 10px;
+        background-color: #444444;
+        color: white;
+        font-size: 16px;
       }
+
       .tez-header {
-        font-size: 18px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+        font-style: italic;
       }
+
       .tez-speed-input {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         width: 100%;
       }
+
       .tez-speed-value {
-        font-size: 20px;
         font-weight: 500;
       }
+
       .tez-error {
         margin-top: 5px;
         font-size: 14px;
-        color: red;
+        color: #f16031;
+      }
+
+      /*
+        Styling slider input based on:
+        https://blog.logrocket.com/creating-custom-css-range-slider-javascript-upgrades
+      */
+
+      input[type="range"] {
+        /* removing default appearance */
+        -webkit-appearance: none;
+        appearance: none;
+        /* creating a custom design */
+        width: 100%;
+        cursor: pointer;
+        outline: none;
+        /*  slider progress trick  */
+        border-radius: 16px;
+        height: 6px;
+        background: #d0ebcd;
+      }
+
+      /* Thumb: webkit */
+      input[type="range"]::-webkit-slider-thumb {
+        /* removing default appearance */
+        -webkit-appearance: none;
+        appearance: none;
+        /* creating a custom design */
+        height: 16px;
+        width: 16px;
+        background-color: #46b53c;
+        border-radius: 50%;
+        border: none;
+        transition: .2s ease-in-out;
+      }
+
+      /* Thumb: Firefox */
+      input[type="range"]::-moz-range-thumb {
+        height: 16px;
+        width: 16px;
+        background-color: #46b53c;
+        border-radius: 50%;
+        border: none;
+        transition: .2s ease-in-out;
+      }
+
+      /* Hover, active & focus Thumb: Webkit */
+      input[type="range"]::-webkit-slider-thumb:hover {
+        height: 18px;
+        width: 18px;
+      }
+
+      input[type="range"]:active::-webkit-slider-thumb {
+        height: 18px;
+        width: 18px;
+      }
+
+      input[type="range"]:focus::-webkit-slider-thumb {
+        height: 18px;
+        width: 18px;
+      }
+
+      /* Hover, active & focus Thumb: Firfox */
+      input[type="range"]::-moz-range-thumb:hover {
+        height: 18px;
+        width: 18px;
       }
     </style>
   </head>

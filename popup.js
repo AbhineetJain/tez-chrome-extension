@@ -12,6 +12,7 @@ chrome.storage.local.get('tezSpeed').then((result) => {
     slider.value = storedSpeed;
     output.innerHTML = storedSpeed;
     handleSpeedChange(slider);
+    showSliderProgress();
 });
 
 handleSpeedChange = async (input) => {
@@ -30,5 +31,12 @@ handleSpeedChange = async (input) => {
   }
 
 slider.oninput = function() {
+  showSliderProgress();
   handleSpeedChange(this);
+}
+
+function showSliderProgress() {
+  const sliderValue = slider.value;
+  const progress = ((sliderValue - slider.min) / (slider.max - slider.min)) * 100;
+  slider.style.background = `linear-gradient(to right, #46b53c ${progress}%, #d0ebcd ${progress}%)`;
 }
